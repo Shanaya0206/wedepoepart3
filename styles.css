@@ -1,0 +1,828 @@
+:root {
+  --teal: #4fb3a6;
+  --teal-dark: #3a8b7e;
+  --coral: #f08a72;
+  --cream: #f6efe6;
+  --ink: #233042;
+  --muted: #6b7280;
+  --white: #ffffff;
+  --radius: 12px;
+  --transition: all 0.3s ease-in-out;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  background-color: var(--cream);
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: var(--radius);
+}
+
+header {
+  background: linear-gradient(90deg, var(--teal), var(--teal-dark));
+  color: var(--white);
+  padding: 1rem 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.brand h1 {
+  font-size: 1.6rem;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--coral);
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+    background: var(--teal-dark);
+    border-radius: 0 0 var(--radius) var(--radius);
+    margin-top: 0.5rem;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+}
+
+.hero {
+  background: linear-gradient(to right, rgba(79, 179, 166, 0.1), rgba(240, 138, 114, 0.1));
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  color: var(--teal-dark);
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin: 1rem 0 2rem;
+  color: var(--muted);
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.btn.primary {
+  background: var(--teal-dark);
+  color: white;
+}
+
+.btn.primary:hover {
+  background: var(--teal);
+}
+
+.btn.secondary {
+  background: var(--coral);
+  color: white;
+}
+
+.btn.secondary:hover {
+  background: #f5a38d;
+}
+
+.btn.link {
+  color: var(--teal-dark);
+  text-decoration: underline;
+}
+
+.btn.link:hover {
+  color: var(--coral);
+}
+
+.featured {
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.featured h2 {
+  color: var(--teal-dark);
+  margin-bottom: 1rem;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0 2rem;
+}
+
+.gallery img {
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+.mission {
+  padding: 3rem 1rem;
+  background: white;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.mission h2 {
+  color: var(--teal-dark);
+  margin-bottom: 1rem;
+}
+
+.card {
+  background: white;
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.05);
+}
+
+.map-section {
+  padding: 3rem 1rem;
+}
+
+#map {
+  width: 100%;
+  height: 350px;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cta {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: var(--teal);
+  color: white;
+}
+
+.cta .btn {
+  background: white;
+  color: var(--teal-dark);
+}
+
+.cta .btn:hover {
+  background: var(--coral);
+  color: white;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--muted);
+  background: var(--cream);
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: var(--teal-dark);
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: var(--coral);
+}
+
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.lightbox {
+  position: relative;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.close-lightbox {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 2rem;
+  color: #333;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  line-height: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease-in-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+body {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+button,
+a {
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(255, 182, 193, 0.4);
+}
+
+a:hover {
+  color: #ffe6eb;
+  text-shadow: 0 0 5px #fff;
+}
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(255, 182, 193, 0.25);
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.paw-print {
+  position: fixed;
+  pointer-events: none;
+  font-size: 1.5rem;
+  opacity: 0.8;
+  color: #ffb6c1;
+  animation: pawFade 1.5s forwards;
+}
+
+@keyframes pawFade {
+  to {
+    transform: translateY(-20px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+button {
+  position: relative;
+  overflow: hidden;
+}
+
+button::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 10%, transparent 10.01%);
+  background-size: 10% 10%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+button:hover::after {
+  opacity: 0.5;
+  animation: sparkle 1s linear infinite;
+}
+
+@keyframes sparkle {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+.hero {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  animation: fadeIn 1.5s ease;
+}
+
+/* 🌸 Base Reset & Typography */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(180deg, #fffafc, #fef9f5);
+  color: #444;
+  overflow-x: hidden;
+  line-height: 1.6;
+  font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+}
+
+/* Headings with smooth scaling */
+h1 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 600;
+  color: #ff6f91;
+}
+
+h2 {
+  font-size: clamp(1.6rem, 3.5vw, 2.3rem);
+  color: #ff6f91;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: clamp(1.3rem, 3vw, 1.6rem);
+  color: #ff95aa;
+}
+
+/* 🌸 Header & Navigation */
+header {
+  background: #ffb6c1;
+  color: white;
+  padding: 1rem 0;
+  box-shadow: 0 2px 10px rgba(255, 182, 193, 0.4);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 1rem;
+}
+
+header img {
+  height: 90px;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+  color: #ffe6eb;
+  text-decoration: underline;
+}
+
+/* 🌈 Hero / Info Sections */
+.contact-info,
+.adoption-hero,
+.about-hero {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: linear-gradient(135deg, #ffe6eb, #d8f5ff);
+}
+
+/* 🧾 Cards and Boxes */
+.info-card,
+.adoption-card,
+.event-card {
+  background: #fffafc;
+  border: 2px solid #ffd6dc;
+  border-radius: 15px;
+  padding: 1.2rem;
+  box-shadow: 0 4px 12px rgba(255, 182, 193, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover,
+.adoption-card:hover,
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(255, 111, 145, 0.25);
+}
+
+/* ✨ Buttons */
+button,
+.btn {
+  background: #ffb6c1;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 0.8rem 1.2rem;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover,
+.btn:hover {
+  background: #ff95aa;
+  transform: scale(1.05);
+}
+
+@media (max-width: 1024px) {
+  header .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  header nav ul {
+    gap: 1rem;
+  }
+
+  img {
+    max-width: 90%;
+    height: auto;
+  }
+
+  .contact-container,
+  .adoption-cards,
+  .info-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-form,
+  #map {
+    width: 90%;
+  }
+
+  p {
+    font-size: clamp(0.9rem, 1.3vw, 1rem);
+  }
+}
+
+
+@media (max-width: 768px) {
+
+  header nav {
+    position: relative;
+  }
+
+  header nav::after {
+    content: '\2630';
+    font-size: 1.8rem;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+  }
+
+  header nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    background: #ffb6c1;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 5px 15px rgba(255, 182, 193, 0.3);
+  }
+
+  header nav ul.active {
+    display: flex;
+  }
+
+  .info-card,
+  .adoption-card {
+    width: 90%;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-align: center;
+  }
+
+  .social-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
+  }
+}
+
+/* --- Small Phones --- */
+@media (max-width: 480px) {
+  body {
+    font-size: clamp(0.8rem, 1vw, 0.9rem);
+  }
+
+  header img {
+    height: 70px;
+  }
+
+  h1 {
+    font-size: clamp(1.4rem, 4vw, 1.8rem);
+  }
+
+  h2 {
+    font-size: clamp(1.1rem, 3vw, 1.4rem);
+  }
+
+  h3 {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+  }
+
+  .contact-form button {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+
+  footer {
+    font-size: 0.85rem;
+    padding: 1rem;
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 🌸 Base Reset & Typography */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(180deg, #fffafc, #fef9f5);
+  color: #444;
+  overflow-x: hidden;
+  line-height: 1.6;
+  font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+}
+
+/* Headings with smooth scaling */
+h1 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 600;
+  color: #ff6f91;
+}
+
+h2 {
+  font-size: clamp(1.6rem, 3.5vw, 2.3rem);
+  color: #ff6f91;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: clamp(1.3rem, 3vw, 1.6rem);
+  color: #ff95aa;
+}
+
+/* 🌸 Header & Navigation */
+header {
+  background: #ffb6c1;
+  color: white;
+  padding: 1rem 0;
+  box-shadow: 0 2px 10px rgba(255, 182, 193, 0.4);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 1rem;
+}
+
+header img {
+  height: 90px;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+  color: #ffe6eb;
+  text-decoration: underline;
+}
+
+/* 🌈 Hero / Info Sections */
+.contact-info,
+.adoption-hero,
+.about-hero {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: linear-gradient(135deg, #ffe6eb, #d8f5ff);
+}
+
+/* 🧾 Cards and Boxes */
+.info-card,
+.adoption-card,
+.event-card {
+  background: #fffafc;
+  border: 2px solid #ffd6dc;
+  border-radius: 15px;
+  padding: 1.2rem;
+  box-shadow: 0 4px 12px rgba(255, 182, 193, 0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: fadeInUp 1s ease;
+}
+
+.info-card:hover,
+.adoption-card:hover,
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(255, 111, 145, 0.25);
+}
+
+/* ✨ Buttons */
+button,
+.btn {
+  background: #ffb6c1;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 0.8rem 1.2rem;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover,
+.btn:hover {
+  background: #ff95aa;
+  transform: scale(1.05);
+}
+
+/* ✨ Smooth Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
