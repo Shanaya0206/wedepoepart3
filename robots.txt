@@ -1,0 +1,11 @@
+# robots.txt for Paws for a Cause
+User-agent: *
+Allow: /
+
+# Disallow admin or private folders (none right now, but good practice)
+Disallow: /private/
+
+# Point search engines to your sitemap
+Sitemap: https://www.yourwebsite.com/sitemap.xml
+
+
